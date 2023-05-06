@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MathGame</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tulokset">Tulokset</string>
+    <string name="tyhjenn">TYHJENNÄ</string>
+    <string name="uusi_peli">UUSI PELI</string>
+</resources>

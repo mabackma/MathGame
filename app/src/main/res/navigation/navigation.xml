@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.mathgame.screens.about.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.example.mathgame.screens.rules.RulesFragment"
+        android:label="Rules"
+        tools:layout="@layout/fragment_rules" />
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.mathgame.screens.start.StartFragment"
+        android:label="Start"
+        tools:layout="@layout/fragment_start">
+        <action
+            android:id="@+id/action_startFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.mathgame.screens.game.GameFragment"
+        android:label="Game"
+        tools:layout="@layout/fragment_game">
+        <action
+            android:id="@+id/action_gameFragment_to_endFragment"
+            app:destination="@id/endFragment"
+            app:popUpTo="@id/startFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="operation"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/endFragment"
+        android:name="com.example.mathgame.screens.score.EndFragment"
+        android:label="Score"
+        tools:layout="@layout/fragment_end">
+        <action
+            android:id="@+id/action_endFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.mathgame.screens.result.ResultFragment"
+        android:label="Result"
+        tools:layout="@layout/fragment_result">
+        <action
+            android:id="@+id/action_resultFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+</navigation>

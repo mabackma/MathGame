@@ -37,7 +37,7 @@ class ResultFragment : Fragment() {
             binding.displayResults.text = resultViewModel.makeStringFromResults(results)
         })
 
-        // Tyhjentää tallennetut tulokset
+        // Tyhjentää tallennetut tulokset.
         binding.clearButton.setOnClickListener {
             resultViewModel.onClear()
             Snackbar.make(binding.root, "Tulokset tyhjennetty!", Snackbar.LENGTH_SHORT).show()
